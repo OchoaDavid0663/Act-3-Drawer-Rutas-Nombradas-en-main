@@ -24,6 +24,20 @@ class SuplementosPage extends StatelessWidget {
               'https://raw.githubusercontent.com/OchoaDavid0663/Act-3-Drawer-Rutas-Nombradas-en-main/refs/heads/main/s3.jfif', // URL de GitHub
               width: 200,
               height: 200,
+              loadingBuilder: (BuildContext context, Widget child,
+                  ImageChunkEvent? loadingProgress) {
+                if (loadingProgress == null) {
+                  return child;
+                }
+                return Center(
+                  child: CircularProgressIndicator(
+                    value: loadingProgress.expectedTotalBytes != null
+                        ? loadingProgress.cumulativeBytesLoaded /
+                            loadingProgress.expectedTotalBytes!
+                        : null,
+                  ),
+                );
+              },
             ),
           ],
         ),
