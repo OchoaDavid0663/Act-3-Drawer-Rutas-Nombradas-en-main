@@ -130,7 +130,7 @@ class PaginaInicio extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: const Text("DASHBOARD")),
+      appBar: AppBar(title: const Text("SIMILARES")),
       drawer: const MiDrawer(),
       body: Center(
         child: Column(
